@@ -9,19 +9,44 @@
 </head>
 
 <body>
+  <h1>ASHFALL</h1>
 
-<h1>ASHFALL</h1>
+<pre id="game">
 
-<p>Day 1</p>
+Day 1
 
-<p>06:12</p>
+06:12
 
-<p>Weather: Cool and overcast</p>
+Weather: Cool and overcast
 
-<p>Location: Old Forest</p>
+Location: Old Forest
 
-<p>Carl wakes beneath a pine tree.</p>
+Carl wakes beneath a pine tree.
 
+</pre>
+
+<input id="command" placeholder="What is your intention?">
+
+
+<script>
+
+document.getElementById("command").addEventListener("keydown", function(e) {
+
+  if (e.key === "Enter") {
+
+    let command = this.value;
+
+    let game = document.getElementById("game");
+
+    game.textContent += "\n\n> " + command;
+
+    this.value = "";
+
+  }
+
+});
+
+</script>
 </body>
 
 </html>
