@@ -50,15 +50,35 @@ form.addEventListener("submit", function(event) {
 
   let lower = command.toLowerCase();
 
-  if (lower.includes("look")) {
+if (lower.includes("look")) {
 
-    game.textContent +=
+  game.textContent +=
 
-    "\n\nCarl studies the forest." +
+  "\n\nCarl studies the forest." +
 
-    "\nHe notices animal tracks in the mud." +
+  "\nHe notices animal tracks in the mud." +
 
-    "\nBirdsong comes from the east.";
+  "\nBirdsong comes from the east.";
+
+}
+
+else if (lower.includes("water")) {
+
+  game.textContent +=
+
+  "\n\nCarl listens carefully." +
+
+  "\nAfter several minutes he hears running water." +
+
+  "\nThe sound seems to come from the east.";
+
+}
+
+else {
+
+  game.textContent +=
+
+  "\n\nCarl isn't sure how to do that yet.";
 
   }
 
