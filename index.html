@@ -46,9 +46,23 @@ form.addEventListener("submit", function(event) {
 
   if (command !== "") {
 
-    game.textContent += "\n\n> " + command;
+  game.textContent += "\n\n> " + command;
 
-    input.value = "";
+  let lower = command.toLowerCase();
+
+  if (lower.includes("look")) {
+
+    game.textContent +=
+
+    "\n\nCarl studies the forest." +
+
+    "\nHe notices animal tracks in the mud." +
+
+    "\nBirdsong comes from the east.";
+
+  }
+
+  input.value = "";
 
   }
 
