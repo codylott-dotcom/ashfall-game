@@ -4,16 +4,15 @@
 
 <head>
 
-<title>Ashfall</title>
+  <title>Ashfall</title>
 
 </head>
 
 <body>
-  <h1>ASHFALL</h1>
 
-<pre id="game">
+<h1>ASHFALL</h1>
 
-Day 1
+<pre id="game">Day 1
 
 06:12
 
@@ -21,41 +20,42 @@ Weather: Cool and overcast
 
 Location: Old Forest
 
-Carl wakes beneath a pine tree.
+Carl wakes beneath a pine tree.</pre>
 
-</pre>
+<form id="form">
 
-<input id="command" placeholder="What is your intention?">
+  <input id="command" placeholder="What is your intention?">
 
-<button onclick="submitCommand()">Enter</button>
+  <button type="submit">Enter</button>
 
-<<script>
+</form>
 
-function submitCommand() {
+<script>
 
-  let input = document.getElementById("command");
+let form = document.getElementById("form");
 
-  let command = input.value;
+let input = document.getElementById("command");
 
-  let game = document.getElementById("game");
+let game = document.getElementById("game");
 
-  game.textContent += "\n\n> " + command;
+form.addEventListener("submit", function(event) {
 
-  input.value = "";
+  event.preventDefault();
 
-}
+  let command = input.value.trim();
 
-document.getElementById("command").addEventListener("keydown", function(e) {
+  if (command !== "") {
 
-  if (e.key === "Enter") {
+    game.textContent += "\n\n> " + command;
 
-    submitCommand();
+    input.value = "";
 
   }
 
 });
 
 </script>
+
 </body>
 
 </html>
