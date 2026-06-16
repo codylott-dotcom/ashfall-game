@@ -29,19 +29,27 @@ Carl wakes beneath a pine tree.
 
 <button onclick="submitCommand()">Enter</button>
 
-<script>
+<<script>
+
+function submitCommand() {
+
+  let input = document.getElementById("command");
+
+  let command = input.value;
+
+  let game = document.getElementById("game");
+
+  game.textContent += "\n\n> " + command;
+
+  input.value = "";
+
+}
 
 document.getElementById("command").addEventListener("keydown", function(e) {
 
   if (e.key === "Enter") {
 
-    let command = this.value;
-
-    let game = document.getElementById("game");
-
-    game.textContent += "\n\n> " + command;
-
-    this.value = "";
+    submitCommand();
 
   }
 
